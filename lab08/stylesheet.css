@@ -1,0 +1,45 @@
+ body{
+    background-color: #414446;;
+ }
+
+ h1, h2{
+    color:#9d8185;
+ }
+ 
+ p{
+    color: #ff99c8;
+ }
+
+ h4{
+    color: black;
+ }
+
+nav{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 35px;
+    margin-left: -15px;
+    margin-top: -15px;
+    margin-right: -10px;
+    border: solid;
+    padding: 20px;
+}
+
+ul{
+    color:beige;
+}
+
+nav a{
+    color:#b8b8ff;
+}
+
+nav a:hover { 
+    background-color: #fae1dd;
+}
+
+table{
+    margin-left: 30%;
+    text-align: center;
+}
