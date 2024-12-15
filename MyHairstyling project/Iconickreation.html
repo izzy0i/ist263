@@ -6,7 +6,7 @@
     <title>Iconic Kreations</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="background-color: #faa7d650; color: #333;">
     <header>
         <nav>
             <ul>
@@ -20,19 +20,92 @@
         <h1>Iconic Kreations</h1>
         <section>
             <h2>Understanding Hair Types</h2>
+            <img src="images/tutorials.jpg" alt="Hair Tutorials" style="width: 50%; height: auto;">
             <p>Learn about the science behind different hair types and their care.</p>
         </section>
+
         <section>
             <h2>Complex Styles</h2>
+            <img src="images/complex-styles.jpg" alt="Complex Styles" style="width: 50%; height: auto;">
             <p>Discover advanced techniques to elevate your styling skills.</p>
         </section>
-        <section>
-            <h2>Responsible Choices</h2>
-            <p>Promoting hair health and eco-friendly practices.</p>
+
+        <section class="product-section">
+            <h2>Best Products</h2>
+        
+            <div class="product-container">
+                <!-- Product 1 -->
+                <div class="product">
+                    <img src="rack.jpg" alt="Hair product1" onclick="showPopup('rack-popup')" style="cursor: pointer;">
+                    <div id="rack-popup" class="popup">
+                        <p>This is a high-quality rack for organizing your hair products efficiently.</p>
+                        <button onclick="closePopup('rack-popup')">Close</button>
+                    </div>
+                </div>
+        
+                <!-- Product 2 -->
+                <div class="product">
+                    <img src="mousse.webp" alt="Hair product2" onclick="showPopup('mousse-popup')" style="cursor: pointer;">
+                    <div id="mousse-popup" class="popup">
+                        <p>This mousse gives volume and defines curls while maintaining hair health.</p>
+                        <button onclick="closePopup('mousse-popup')">Close</button>
+                    </div>
+                </div>
+        
+                <!-- Product 3 -->
+                <div class="product">
+                    <img src="combs.jpg" alt="Hair product3" onclick="showPopup('combs-popup')" style="cursor: pointer;">
+                    <div id="combs-popup" class="popup">
+                        <p>These combs are perfect for detangling and styling hair of all types.</p>
+                        <button onclick="closePopup('combs-popup')">Close</button>
+                    </div>
+                </div>
+        
+                <!-- Product 4 -->
+                <div class="product">
+                    <img src="braid.jpg" alt="Hair product4" onclick="showPopup('braid-popup')" style="cursor: pointer;">
+                    <div id="braid-popup" class="popup">
+                        <p>This braiding hair is lightweight, tangle-free, and perfect for protective styles.</p>
+                        <button onclick="closePopup('braid-popup')">Close</button>
+                    </div>
+                </div>
+        
+                <!-- Product 5 -->
+                <div class="product">
+                    <img src="braiding.webp" alt="Hair product5" onclick="showPopup('braiding-popup')" style="cursor: pointer;">
+                    <div id="braiding-popup" class="popup">
+                        <p>This braiding mousse ensures your style lasts longer while providing shine and smoothness.</p>
+                        <button onclick="closePopup('braiding-popup')">Close</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
         <p>© 2024 Izzy Iconic. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showPopup(popupId) {
+            // Show the popup
+            document.getElementById(popupId).style.display = 'block';
+    
+            // Add a background overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'popup-overlay';
+            overlay.setAttribute('onclick', `closePopup('${popupId}')`);
+            document.body.appendChild(overlay);
+        }
+    
+        function closePopup(popupId) {
+            // Hide the popup
+            document.getElementById(popupId).style.display = 'none';
+    
+            // Remove the background overlay
+            const overlay = document.querySelector('.popup-overlay');
+            if (overlay) overlay.remove();
+        }
+    </script>
 </body>
 </html>
+
