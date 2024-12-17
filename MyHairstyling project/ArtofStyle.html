@@ -17,19 +17,43 @@
     <main>
         <h1>The Art of Style</h1>
 
-        <section>
+        <section class="global-influences-app">
             <h2>Global Influences</h2>
-            <p>From intricate African braids to sleek Asian buns, international styles inspire local creativity and innovation.</p>
-            <img src="global-influences.jpg" alt="Global Influences">
+            <p>Discover fun facts and styling tips about hairstyles from around the world!</p>
+        
+            <div class="app-container">
+                <label for="region-select">Select a Region:</label>
+                <select id="region-select">
+                    <option value="">-- Choose Region --</option>
+                    <option value="africa">Africa</option>
+                    <option value="asia">Asia</option>
+                    <option value="caribbean">Caribbean</option>
+                    <option value="europe">Europe</option>
+                </select>
+                <button onclick="showRandomFact()">Show Fact</button>
+        
+                <div id="fact-display" class="fact-box">
+                    <p>Select a region to see a random fact!</p>
+                </div>
+            </div>
         </section>
 
-        <section class="carousel-container">
+        <section class="carousel-trendsetter">
             <h2>Trendsetters</h2>
-            <p>Meet the stylists setting today's hair trends with their unique vision and creativity.</p>
+            <p>
+                Meet the stylists who inspire and support me every step of the way. When I need advice, whether it's perfecting<br>
+                a tricky braid or choosing the right products, I turn to these talented artists for tips and tricks. Their creativity<br>
+                and expertise always push me to improve and explore new techniques.<br><br>
+                It's not just a one way street we share ideas, uplift one another, and celebrate our progress together. From<br>
+                intricate braids and bold locs to sleek silk presses and modern styles, their work constantly motivates me to<br>
+                be the best hairstylist I can be.<br><br>
+                Each of these stylists has their own unique vision and technique, proving that hair is more than just styling—<br>
+                it's an art form that connects and inspires us all.<br>
+            </p>
             <div class="carousel">
-                <div class="slide"><img src="stylist1.jpg" alt="Stylist 1"></div>
-                <div class="slide"><img src="stylist2.jpg" alt="Stylist 2"></div>
-                <div class="slide"><img src="stylist3.jpg" alt="Stylist 3"></div>
+                <div class="slide"><img src="stylistA.png" alt="Ayesha Styles"></div>
+                <div class="slide"><img src="stylistB.png" alt="Slayed by Dakari"></div>
+                <div class="slide"><img src="stylistC.png" alt="Laced by Hadji"></div>
             </div>
             <button class="prev" onclick="moveSlide(-1)">❮</button>
             <button class="next" onclick="moveSlide(1)">❯</button>
@@ -38,12 +62,12 @@
         <section>
             <h2>Weekly Style Challenges</h2>
             <p>Engage in our weekly style challenges and showcase your artistry to the world!</p>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/UBLDk7ppgPg" frameborder="0" allowfullscreen></iframe>
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/c9Syycy1KB8" frameborder="0" allowfullscreen></iframe>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Izzy Iconic. All rights reserved.</p>
+        <p>© 2024 Izzy Iconic. All rights reserved. Thank You, I hope you learned about Izzy Iconic and it's foundations.</p>
     </footer>
 
     <script>
@@ -60,6 +84,43 @@
             }
         
             document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+      <!-- JavaScript Section -->
+      <script>
+        const facts = {
+            africa: [
+                "Braiding is more than just a style in Africa; it’s a way to tell stories, show creativity, and reflect identity. For centuries, cornrows and intricate patterns have been used to showcase social status, age, and even family lineage.",
+                "The Fulani braids, inspired by the Fulani people, combine elegance and tradition with beads and intricate parts. You might’ve seen this look styled in a modern way, but its roots run deep in African culture.",
+                "In many African communities, braiding hair is a bonding experience. Friends and family gather to braid, laugh, and share stories, making the process just as meaningful as the style itself."
+            ],
+            asia: [
+                "Asian hairstyles often reflect simplicity and grace. From the traditional Japanese Shimada buns to intricate Chinese hair knots, each style carries cultural symbolism.",
+                "Henna isn't just for body art in India – it’s been used for centuries to naturally color and strengthen hair while promoting scalp health. It’s like a mini spa day for your hair!",
+                "Ever wondered about the elegant hairstyles in historical Asian films? Many were symbols of wisdom, respect, and family pride, carefully passed down through generations."
+            ],
+            caribbean: [
+                "The Caribbean islands embrace styles like twists, locs, and dreadlocks, deeply tied to identity and heritage. The humid climate makes protective styles essential to keeping hair healthy.",
+                "Bantu knots, popular across the Caribbean, are not just trendy but also rooted in African history. They’re versatile, protective, and make a statement of pride.",
+                "For many Caribbean women and men, hair styling is both practical and creative. From bold twists to free-flowing locs, these styles celebrate resilience and beauty."
+            ],
+            europe: [
+                "In the 18th century, wigs weren’t just for style – they were a status symbol among European elites. The bigger and more powdered, the better!",
+                "The 1920s were a game-changer for European fashion, bringing the sleek, short bob into the spotlight. It was all about confidence and breaking norms.",
+                "During the Renaissance, European women wore elaborate braids and updos to show off wealth and creativity. Hair was art, adorned with pearls, ribbons, and jewels."
+            ]
+        };
+
+        function showRandomFact() {
+            const region = document.getElementById('region-select').value;
+            const factDisplay = document.getElementById('fact-display');
+
+            if (region && facts[region]) {
+                const randomFact = facts[region][Math.floor(Math.random() * facts[region].length)];
+                factDisplay.innerHTML = `<p>${randomFact}</p>`;
+            } else {
+                factDisplay.innerHTML = `<p>Please select a region to see a fact!</p>`;
+            }
         }
     </script>
 </body>
